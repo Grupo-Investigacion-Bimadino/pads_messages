@@ -9,18 +9,44 @@ export class IntencionesService {
   }
 
   findAll() {
-    return `This action returns all intenciones`;
+    return [
+      {
+        id: "1",
+        intencion: "chatbot",
+        mensajes: "abrir abrir chatbot",
+      },
+      {
+        id: "2",
+        intencion: "soporte",
+        mensajes: "comunicar con soporte",
+      },
+      {
+        id: "3",
+        intencion: "chat en grupo",
+        mensajes: "hola grupo",
+      },
+    ];
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} intencione`;
+    return {
+    
+        id: "1",
+        intencion: "chatbot",
+        mensajes: "abrir abrir chatbot",
+      
+    }
   }
 
   update(id: number, updateIntencioneDto: UpdateIntencioneDto) {
-    return `This action updates a #${id} intencione`;
+    return updateIntencioneDto;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} intencione`;
+    return    {
+      id: "3",
+      intencion: "chat en grupo",
+      mensajes: "hola grupo",
+    };
   }
 }
