@@ -5,7 +5,7 @@ import { UpdateIntencioneDto } from './dto/update-intencione.dto';
 @Injectable()
 export class IntencionesService {
   create(createIntencioneDto: CreateIntencioneDto) {
-    return 'This action adds a new intencione';
+    return createIntencioneDto;
   }
 
   findAll() {
