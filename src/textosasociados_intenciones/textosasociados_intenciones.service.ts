@@ -5,22 +5,46 @@ import { UpdateTextosasociadosIntencioneDto } from './dto/update-textosasociados
 @Injectable()
 export class TextosasociadosIntencionesService {
   create(createTextosasociadosIntencioneDto: CreateTextosasociadosIntencioneDto) {
-    return 'This action adds a new textosasociadosIntencione';
+    return createTextosasociadosIntencioneDto;
   }
 
   findAll() {
-    return `This action returns all textosasociadosIntenciones`;
+    return [
+      {
+        id:"1",
+        texto: "Hola necesito abrir chatbox",
+        id_Intencion:"1",
+      },
+      {
+        id:"2",
+        texto: "Hola necesito abrir soprte tecnico",
+        id_Intencion:"2",
+      },
+      {
+        id:"3",
+        texto: "Hola necesito abrir una peticion de grupo",
+        id_Intencion:"3",
+      },
+    ];
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} textosasociadosIntencione`;
-  }
+    findOne(id: number) {
+      return {
+        id:"1",
+        texto: "Hola necesito abrir chatbox",
+        id_Intencion:"1"
+      };
+    }
 
-  update(id: number, updateTextosasociadosIntencioneDto: UpdateTextosasociadosIntencioneDto) {
-    return `This action updates a #${id} textosasociadosIntencione`;
-  }
+    update(id: number, updateTextosasociadosIntencioneDto: UpdateTextosasociadosIntencioneDto) {
+     return updateTextosasociadosIntencioneDto;
+    }
 
-  remove(id: number) {
-    return `This action removes a #${id} textosasociadosIntencione`;
+    remove(id: number) {
+      return {
+        id:`${id}`,
+        texto: "Hola necesito abrir chatbox",
+        id_Intencion:"1"
+      };
+    }
   }
-}
