@@ -70,7 +70,7 @@ export class MessagesService {
   }
 
   update(id: number, updateMessageDto: UpdateMessageDto) {
-    return `id ${id} actualizado: ` + updateMessageDto;
+    return updateMessageDto;
   }
 
   remove(id: number) {

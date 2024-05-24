@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "0439d4b0-3dc4-4598-a8f1-35663ad2f8b9",
+		"name": "pads_messages: textosasociadosIntenciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23742805"
+	},
+	"item": [
+		{
+			"name": "obtener textosasociados-intenciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/textosasociados-intenciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"textosasociados-intenciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener un textosasociados-intenciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/textosasociados-intenciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"textosasociados-intenciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear textoasociadointenciones",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{       \n    \"id\":\"2\",\n    \"texto\": \"Hola necesito abrir soprte tecnico\",\n    \"id_Intencion\":\"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/textosasociados-intenciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"textosasociados-intenciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar texto asociado intenciones",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{       \n    \"id\":\"2\",\n    \"texto\": \"Hola necesito abrir soprte tecnico actualizado\",\n    \"id_Intencion\":\"2\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/textosasociados-intenciones/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"textosasociados-intenciones",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar texto asociado intenciones",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/textosasociados-intenciones/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"textosasociados-intenciones",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
