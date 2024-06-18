@@ -1,11 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { UpdateMessageDto } from './dto/update-message.dto';
+import { InjectModel } from "@nestjs/mongoose";
+import { Model } from "mongoose";
+import { Message } from "./schemas/messages.schema";
+
 
 @Injectable()
 export class MessagesService {
-  create(createMessageDto: CreateMessageDto) {
-    return createMessageDto;
+  constructor(@InjectModel(Message.name) private messageModel: Model<Message>) {}
+
+  async create(createMessageDto: CreateMessageDto) {
+   const createMessage = new this.messageModel(createMessageDto);
+    return createMessage.save();
   }
 
   findAll() {

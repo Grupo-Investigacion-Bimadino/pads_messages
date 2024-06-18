@@ -4,6 +4,7 @@ import { UpdateTextosasociadosIntencioneDto } from './dto/update-textosasociados
 
 @Injectable()
 export class TextosasociadosIntencionesService {
+  
   create(createTextosasociadosIntencioneDto: CreateTextosasociadosIntencioneDto) {
     return createTextosasociadosIntencioneDto;
   }

@@ -4,6 +4,7 @@ import { UpdateIntencioneDto } from './dto/update-intencione.dto';
 
 @Injectable()
 export class IntencionesService {
+  
   create(createIntencioneDto: CreateIntencioneDto) {
     return createIntencioneDto;
   }

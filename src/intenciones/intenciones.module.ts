@@ -5,7 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import {IntecionesSchema} from "./schemas/intenciones.schema";
 
 @Module({
-    imports: [MongooseModule.forFeature([{ name: 'Intenciones', schema: IntecionesSchema }])],
+  imports: [MongooseModule.forFeature([{ name: 'Intenciones', schema: IntecionesSchema }])],
   controllers: [IntencionesController],
   providers: [IntencionesService],
 })
