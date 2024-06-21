@@ -19,7 +19,7 @@ export class TextosasociadosIntencionesService {
   }
 
     async findOne(id: string) {
-     return await this.textosasociadosIntencioneModel.findById(id).exec
+     return this.textosasociadosIntencioneModel.findById(id);
     }
 
     async update(id: string, updateTextosasociadosIntencioneDto: UpdateTextosasociadosIntencioneDto) {
@@ -31,5 +31,5 @@ export class TextosasociadosIntencionesService {
    async remove(id: string) {
      const textosasociadosDeleted = await this.textosasociadosIntencioneModel.findByIdAndDelete(id);
      return textosasociadosDeleted;
-    }
+    } 
   }

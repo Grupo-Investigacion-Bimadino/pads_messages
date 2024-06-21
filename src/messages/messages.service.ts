@@ -16,11 +16,11 @@ export class MessagesService {
   }
 
   async findAll(): Promise<Message[]> {
-    return this.messageModel.find().exec();
+    return this.messageModel.find();
   }
 
   async findOne(id: string) {
-    return await this.messageModel.findById(id).exec();
+    return await this.messageModel.findById(id);
   }
 
   async update(id: string, updateMessageDto: UpdateMessageDto) {
