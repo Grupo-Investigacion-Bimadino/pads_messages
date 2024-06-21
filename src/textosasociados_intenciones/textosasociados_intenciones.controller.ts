@@ -19,16 +19,16 @@ export class TextosasociadosIntencionesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.textosasociadosIntencionesService.findOne(+id);
+    return this.textosasociadosIntencionesService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTextosasociadosIntencioneDto: UpdateTextosasociadosIntencioneDto) {
-    return this.textosasociadosIntencionesService.update(+id, updateTextosasociadosIntencioneDto);
+    return this.textosasociadosIntencionesService.update(id, updateTextosasociadosIntencioneDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.textosasociadosIntencionesService.remove(+id);
+    return this.textosasociadosIntencionesService.remove(id);
   }
 }

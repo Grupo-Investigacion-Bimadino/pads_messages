@@ -1,10 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import * as mongoose from 'mongoose';
+import { Document, Types } from 'mongoose';
 
 @Schema({
     timestamps: true,
 })
-export class MessageSchemas extends Document {
+export class Message extends Document {
+
+    _id: mongoose.Types.ObjectId;
+
     @Prop()
     emisor: string;
 
@@ -32,8 +36,9 @@ export class MessageSchemas extends Document {
     @Prop()
     id_usuario: string;
 
+    @Prop()
     intenciones: string[];
 
 }
 
-export const MessageSchema = SchemaFactory.createForClass(MessageSchemas);
+export const MessageSchema = SchemaFactory.createForClass(Message);
