@@ -1,1 +1,1 @@
-export class TextosasociadosIntencione {}
+export class TextosasociadosIntenciones {}

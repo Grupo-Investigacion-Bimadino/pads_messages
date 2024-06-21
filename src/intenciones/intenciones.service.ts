@@ -1,53 +1,35 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateIntencioneDto } from './dto/create-intencione.dto';
 import { UpdateIntencioneDto } from './dto/update-intencione.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from "mongoose";
+import { Intencion } from './schemas/intenciones.schema';
 
 @Injectable()
 export class IntencionesService {
+ constructor(@InjectModel(Intencion.name) private intencionModel: Model<Intencion>) {}
   
-  create(createIntencioneDto: CreateIntencioneDto) {
-    return createIntencioneDto;
+  async create(createIntencioneDto: CreateIntencioneDto) {
+    const createIntencione = new this.intencionModel(createIntencioneDto);
+    return createIntencione.save();
   }
 
-  findAll() {
-    return [
-      {
-        id: "1",
-        intencion: "chatbot",
-        mensajes: "abrir abrir chatbot",
-      },
-      {
-        id: "2",
-        intencion: "soporte",
-        mensajes: "comunicar con soporte",
-      },
-      {
-        id: "3",
-        intencion: "chat en grupo",
-        mensajes: "hola grupo",
-      },
-    ];
+  async findAll() {
+    return await this.intencionModel.find().exec();
   }
 
-  findOne(id: number) {
-    return {
-    
-        id: "1",
-        intencion: "chatbot",
-        mensajes: "abrir abrir chatbot",
-      
-    }
+  async findOne(id: string) {
+    return await this.intencionModel.findById(id).exec();
   }
 
-  update(id: number, updateIntencioneDto: UpdateIntencioneDto) {
-    return updateIntencioneDto;
+  async update(id: string, updateIntencioneDto: UpdateIntencioneDto) {
+    const intencionUpdated = await this.intencionModel.findByIdAndUpdate(id, updateIntencioneDto, {new: true});
+    if(!intencionUpdated) return 'Intencion not found';
+    return intencionUpdated;
   }
 
-  remove(id: number) {
-    return    {
-      id: "3",
-      intencion: "chat en grupo",
-      mensajes: "hola grupo",
-    };
+  async remove(id: string) {
+    const intencionDeleted = await this.intencionModel.findByIdAndDelete(id);
+    return intencionDeleted;
   }
 }

@@ -19,16 +19,16 @@ export class IntencionesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.intencionesService.findOne(+id);
+    return this.intencionesService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateIntencioneDto: UpdateIntencioneDto) {
-    return this.intencionesService.update(+id, updateIntencioneDto);
+    return this.intencionesService.update(id, updateIntencioneDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.intencionesService.remove(+id);
+    return this.intencionesService.remove(id);
   }
 }
