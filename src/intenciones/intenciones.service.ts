@@ -15,11 +15,11 @@ export class IntencionesService {
   }
 
   async findAll() {
-    return await this.intencionModel.find().exec();
+    return await this.intencionModel.find();
   }
 
   async findOne(id: string) {
-    return await this.intencionModel.findById(id).exec();
+    return await this.intencionModel.findById(id);
   }
 
   async update(id: string, updateIntencioneDto: UpdateIntencioneDto) {
